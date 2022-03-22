@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-  	<%!
+  	<%
   		// %! : 선언부
   		// % : 스크립트릿
   		public int i = 10;
@@ -20,8 +20,8 @@
   	<%
   		// 선언부에 작성한 코드는 스크립트릿에서 호출해야 실행됩니다.
   		int result = add(10, 5);
-  		out.println("10+5=" + result + "<br/>");
-  		out.println("16+14=" + add(16,14)+ "<br/>");
+  		out.println("10 + 5 =" + result+ "<br/>");
+  		out.println("16 + 14 =" + add(16, 14) + "<br/>");
   		out.println(result);
   		
   	%>
