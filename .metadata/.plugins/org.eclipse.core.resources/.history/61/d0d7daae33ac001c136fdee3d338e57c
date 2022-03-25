@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="http://localhost:8181/JSPBasic/jspobject/request/req_photo.jsp" value="post">
+	
+	그림 1 <input type="radio" name="photo1" value="1">1 &nbsp;
+	그림 2 <input type="radio" name="photo2" value="2">1 &nbsp;
+	</form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="http://localhost:8181/JSPBasic/jspobject/request/req_photo.jsp">
+	
+	 <input type="radio" name="photo1" value="1">1 &nbsp;
+	 <input type="radio" name="photo2" value="2">2 &nbsp;
+	<br/>
+		<input type= "submit" class="btn btn-primary" value="선택"/>
+	</form>
+</body>
+</html>
