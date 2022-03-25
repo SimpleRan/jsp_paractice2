@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	// 결과페이지를 보고 만들어주세요.
+	int lotto() = new lotto();
+	int selectNum = 0;
+	boolean flag = false;
+	
+	for(int i=0; i<6; i++ ){
+		do{
+			selectNum = (int)(Math.random() * 45) +1;
+			for(int j= 0; j <i; j++){
+				flag  = true;
+				break;
+			}
+			flag = false;
+		}
+	} while(flag);
+	lotto(i) = selectNum;	
+}
+
+%>
+
+ 	 <h1>로또 번호 생성결과 </h1>
+ 	 이번주 로또는 이 번호다!!
+ 	 <%= lotto %>
+</body>
+</html>
