@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+		<form action="http://localhost:8181/JSPBasic/jspobject/quiz/music_result.jsp" method="post">
+		<table border="1">
+			<thead>
+				<tr>
+					<th>가수명</th>
+					<th>노래명</th>
+					<th>선택하기</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>박재범</th>
+					<th>가나다라</th>
+					<th><input type="radio" name="song" value="가나다라"></th>
+				</tr>		
+				<tr>
+					<th>악동뮤지션</th>
+					<th>낙하</th>
+					<th><input type="radio" name="song" value="낙하"></th>
+				</tr>		
+				<tr>
+					<th>Pink Sweat$</th>
+					<th>Heaven</th>
+					<th><input type="radio" name="song" value="Heaven"></th>
+				</tr>		
+			</tbody>
+		</table>
+		<input type="submit" value="들으러 가기">
+	</form>
+</body>
+</html>

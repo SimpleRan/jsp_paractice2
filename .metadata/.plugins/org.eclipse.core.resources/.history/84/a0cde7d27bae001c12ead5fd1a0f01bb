@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- music.jsp  에는 테이블 형태로 가수, 노래제목, checkbox를 두시고
+곡은 3곡이상 두세요. music_result.jsp에서는 music.jsp에서 보낸 노래제목을 받아서 감지한다음
+유튜브 영상 주로로 리다이렉트 시키게 해주세요. -->
+	<form aciton = "music_result.jsp" method="post">
+	 <table border ="1">
+	  <thead>
+	    <th> 가수 </th> 
+	    <th> 노래제목 </th>
+	    <th> 선택 </th>
+	  </thead>
+	  <tbody>
+	   <tr>
+	    <td>박재범</td>
+	    <td>ganadara</td>
+	    <td><input type="radio" name="music" value="ganadara"> &nbsp; </td>
+	   </tr>
+	   <tr>
+	    <td>톰과 제리</td>
+	    <td><input type="radio" name="photo" value="">2번그림 &nbsp; </td>
+	   </tr>
+	  </tbody>
+	 </table>
+	 	
+	 <input type= "submit"  value="노래 들으러가기"/>
+	</form>
+</body>
+</html>

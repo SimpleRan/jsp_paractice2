@@ -5,6 +5,7 @@
 	String photoPick = request.getParameter("photo");
 	
 %>
+
 <html>
 <head>
 <meta charset="UTF-8">

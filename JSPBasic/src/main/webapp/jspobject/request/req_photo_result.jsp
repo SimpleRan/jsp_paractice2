@@ -15,13 +15,12 @@
    선택한 그림 <%= photoPick %>	<br/>
 <%
 	if(photoPick.equals("1번그림")){
-		out.println("1번 그림을 선택하셨네요!");
+		out.println("1번 그림을 선택하셨네요!<br/>");
+		out.println("<img width='30%'src='01.png'>");
 	}else {
-		out.println("2번 그림을 선택하셨네요!");
+		out.println("2번 그림을 선택하셨네요!<br/>");
+		out.println("<img width= '30%'src='02.png'>");
 	}
 %>
-<br/>
-<img src =" 01.png">
-<img src = "02.png">
 </body>
 </html>
