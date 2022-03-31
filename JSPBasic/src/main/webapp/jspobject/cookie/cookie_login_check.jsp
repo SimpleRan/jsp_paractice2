@@ -26,7 +26,7 @@
 			
 			// 로그인 성공시 쿠키를 생성하고, 로그인 완료 페이지에서는 해당 쿠키를 확인하게 만들어서 로그인 여부를 감지합니다.
 			// 쿠키 생성(쿠키 이름은 login_id, 값은 abc1234 ), 변수명은 자율
-			Cookie loginId = new Cookie("login_id_cookie", "abc1234"); //1800초 setMaxAge로 수정가능
+			Cookie loginId = new Cookie("login_id_cookie", "abc123"); //1800초 setMaxAge로 수정가능
  			loginId.setMaxAge(1800);
 			// 쿠키발송
 			response.addCookie(loginId);

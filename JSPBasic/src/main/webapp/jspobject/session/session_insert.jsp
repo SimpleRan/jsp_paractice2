@@ -11,7 +11,7 @@
 		두 번째 값으로 저장할 데이터를 정해주면 됩니다.
  	*/
  							//세션아이디    세션데이터
- 	session.setAttribute("id_session", "abcd1234");
+ 	session.setAttribute("id_session", "abc1234");
  	session.setAttribute("name_session", "김말이");
  %>
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ name 속성도 각각 id, pw로 해 주시고
 session_login_check.jsp에서 우선 request.getParameter로 받아서 콘솔에 찍게 해주세요 
 ------------------------------------------
 과제 
-아이디"abcd1234", 비번"1111"이 확인되는 경우만 session_id 세션명으로 세션을 발급해주세요
+아이디"abc1234", 비번"1111"이 확인되는 경우만 session_id 세션명으로 세션을 발급해주세요
 저장데이터는 로그인한 아이디 입니다.-->
 
 </body>

@@ -1,17 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!-- session_login_form.jsp를 만들어주세요
-해당 jsp파일 내부에는 form태그를 만들어주시고
-form태그의 목적지는 session_login_check.jsp로 해 주세요.
-form에서 전달하는 데이터는 id, pw입니다.
-name 속성도 각각 id, pw로 해 주시고 
-session_login_check.jsp에서 우선 request.getParameter로 받아서 콘솔에 찍게 해주세요 
-------------------------------------------
-과제 
-아이디"abcd1234", 비번"1111"이 확인되는 경우만 session_id 세션명으로 세션을 발급해주세요
-저장데이터는 로그인한 아이디 입니다.-->
 <%
-
+	// 이미 로그인한 사람이 로그인 페이지를 들어올 수도 없게 해야 합니다.
+	// 로그인한 사람이 들어오는 경우, session_login_ok.jsp로 보내주세요.
+	
+	// 힌트: 로그인한 사용자는 ull이 아닌 다른 값을 가지고 있습니다.
+	 String userId = (String)session.getAttribute("s_id");
+	if(userId != null){
+		// userId에 뭔가 값이 들어있다면 그건 로그인할 때 썼던 아이디이므로, null이 아닌 사용자를 로그인완료창으로 보내야함
+		response.sendRedirect("session_login_ok.jsp");
+	}
 %>
 <!DOCTYPE html>
 <html>
