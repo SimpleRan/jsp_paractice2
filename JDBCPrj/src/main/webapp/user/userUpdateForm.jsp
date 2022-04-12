@@ -1,3 +1,5 @@
+<%@page import="com.ict.domain.UserVO"%>
+<%@page import="com.ict.domain.UserDAO"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
@@ -22,6 +24,38 @@
 	// 로그인한 유저의 정보를 ResultSet rs변수에 받아주세요.
 	// userLoginCheck.jsp를 참조해보세요.
 		// DB와 연동해서 formId에 해당하는 유저 전체 정보를 받아줍니다.(getUserInfo.jsp로직을 참조)
+	// DAO생성
+	UserDAO dao = new UserDAO();
+	UserVO user = dao.getUserInfo(sId);
+%>
+    
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- form은 회원가입 양식과 똑같이 만들어주시면 됩니다.
+	단, 아이디는 입력하지 않습니다. -->
+	<!-- 페이지 넘어가서 사용하게될 PreparedStatement 구문을 1:1로 보내주세요. 
+	UPDATE userinfo SET user_pw=?, user_name=?, email=? WHERE user_id=? -->
+	<h1><%= sId %> 님의 정보를 수정합니다.</h1>
+	<form action="userUpdateCheck.jsp" method="post">
+		<input type="hidden" name="fId" value="<%= sId %>"><br/>
+		비밀번호 : <input type="password" name="fPw"/><br/>
+		이름 : <input type="text" name="fName" value="<%= user.getUserName()%>"/><br/>
+		이메일 : <input type="text" name="fEmail" value="<%=user.getEmail()%>"/><br/>
+		<input type="submit" value="수정하기">
+	</form>
+	
+</body>
+</html>
+
+<%
+/*
+
 	String dbType = "com.mysql.cj.jdbc.Driver";
 	String connectUrl = "jdbc:mysql://localhost:3306/jdbcprac2?serverTimezone=UTC";
 	String connectId = "root";
@@ -46,33 +80,10 @@
 		e.printStackTrace();
 	}
 	rs.next();// 0번인덱스 조회를 위해 한 번 실행해줘야함.
-%>
-    
-    
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<!-- form은 회원가입 양식과 똑같이 만들어주시면 됩니다.
-	단, 아이디는 입력하지 않습니다. -->
-	<!-- 페이지 넘어가서 사용하게될 PreparedStatement 구문을 1:1로 보내주세요. 
-	UPDATE userinfo SET user_pw=?, user_name=?, email=? WHERE user_id=? -->
-	<h1><%= sId %> 님의 정보를 수정합니다.</h1>
-	<form action="userUpdateCheck.jsp" method="post">
-		<input type="hidden" name="fId" value="<%= sId %>"><br/>
-		비밀번호 : <input type="password" name="fPw"/><br/>
-		이름 : <input type="text" name="fName" value="<%= rs.getString(3)%>"/><br/>
-		이메일 : <input type="text" name="fEmail" value="<%=rs.getString(4)%>"/><br/>
-		<input type="submit" value="수정하기">
-	</form>
 	
-</body>
-</html>
+	*/
 
-
+%>
 
 
 
