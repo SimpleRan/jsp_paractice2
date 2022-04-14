@@ -1,3 +1,4 @@
+<%@page import="com.ict.domain.UserDAO"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.DriverManager"%>
@@ -14,21 +15,10 @@
 	// 한 다음 발급되어있던세션 파기(로그아웃) 까지 시킨 다음
 	// 쿼리문: DELETE FROM userinfo WHERE user_id = ?;
 	session.invalidate();
-	String dbType = "com.mysql.cj.jdbc.Driver";
-	String connectUrl = "jdbc:mysql://localhost:3306/jdbcprac2?serverTimezone=UTC";
-	String connectId = "root";
-	String connectPw = "mysql";
-	try {
-		Class.forName(dbType);
-		Connection con = DriverManager.getConnection(connectUrl, connectId, connectPw);
-		String sql = "DELETE FROM userinfo WHERE user_id = ?";
-		
-		PreparedStatement pstmt = con.prepareStatement(sql);
-		pstmt.setString(1, sId);
-		pstmt.executeUpdate();
-	} catch(Exception e){
-		e.printStackTrace();
-	}	
+	// DAO생성
+	UserDAO dao = UserDAO.getInstance();
+	// .deleteUser(유저명) 호출
+	dao.userDelete(sId);
 	// 다시 로그인창으로 리다이렉트 해서 보내기
 	response.sendRedirect("userLoginForm.jsp");
 %>
@@ -42,3 +32,22 @@
 
 </body>
 </html>
+<%
+/*
+String dbType = "com.mysql.cj.jdbc.Driver";
+String connectUrl = "jdbc:mysql://localhost:3306/jdbcprac2?serverTimezone=UTC";
+String connectId = "root";
+String connectPw = "mysql";
+try {
+	Class.forName(dbType);
+	Connection con = DriverManager.getConnection(connectUrl, connectId, connectPw);
+	String sql = "DELETE FROM userinfo WHERE user_id = ?";
+	
+	PreparedStatement pstmt = con.prepareStatement(sql);
+	pstmt.setString(1, sId);
+	pstmt.executeUpdate();
+} catch(Exception e){
+	e.printStackTrace();
+}
+*/	
+%>

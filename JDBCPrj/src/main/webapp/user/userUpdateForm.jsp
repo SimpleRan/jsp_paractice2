@@ -25,7 +25,7 @@
 	// userLoginCheck.jsp를 참조해보세요.
 		// DB와 연동해서 formId에 해당하는 유저 전체 정보를 받아줍니다.(getUserInfo.jsp로직을 참조)
 	// DAO생성
-	UserDAO dao = new UserDAO();
+	UserDAO dao = UserDAO.getInstance();
 	UserVO user = dao.getUserInfo(sId);
 %>
     

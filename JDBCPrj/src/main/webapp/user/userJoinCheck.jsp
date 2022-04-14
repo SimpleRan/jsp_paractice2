@@ -21,7 +21,7 @@
 	// DB와 연동해서 formId에 해당하는 유저 전체 정보를 받아줍니다.(getUserInfo.jsp로직을 참조)
 	
 	// 1. DAO생성
-	UserDAO dao = new UserDAO();
+	UserDAO dao = UserDAO.getInstance();
 	// 2. userJoinCheck 메서드 호출 후 진입점(userJoinCheck.jsp)
 	//    전달 fId=abcd, fPw=1234, fName=알파, email=alpha@alpha.com
 	//    위 정보를 토대로 .userJoinCheck()를 실행하는 로직의 순서를 적어주세요.

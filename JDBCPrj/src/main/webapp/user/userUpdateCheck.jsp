@@ -14,7 +14,7 @@
 	String fEmail = request.getParameter("fEmail");
 	
 	// DAO를 생성해주세요.
-	UserDAO dao = new UserDAO();
+	UserDAO dao = UserDAO.getInstance();
 	
 	// 가입로직을 실행해주세요.
 	dao.userUpdateCheck(fId, fPw, fName, fEmail);

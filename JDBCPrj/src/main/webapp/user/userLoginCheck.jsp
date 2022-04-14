@@ -16,7 +16,7 @@
 	String dbPw = null;
 	//DAO를 이용한 로그인 로직으로 수정해주세요.
 	// 1. DAO를 생성합니다.
-	UserDAO dao = new UserDAO(); // 사용DB지정
+	UserDAO dao = UserDAO.getInstance(); // 사용DB지정
 	// 2. form에서 보내온 유저 아이디를 이용해 해당 유저의 전체 정보를 다 들고옵니다.
 	UserVO user = dao.getUserInfo(formId);
 	// 3. 들고온 유저 아이디에서 getter로 비밀번호도 뽑을수 있으니 비교해서 로그인 처리가 됩니다.
