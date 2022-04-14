@@ -5,7 +5,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	// 로그인했는지 여부 확인(세션)
+	// 로그인했는지 여부 확인(세션)z
 	String sId = (String)session.getAttribute("s_id");
 	// 로그인 안했다면 redirect로 로그인창으로 보내기
 	if(sId == null){

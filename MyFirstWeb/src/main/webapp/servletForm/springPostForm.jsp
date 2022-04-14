@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!--  http://localhost:8181/MyFirstWeb/spring을 목적지로 하는 폼을 만들어주세요.
-	  좀 전처럼 jsp, boot라는 이름으로 submit을 하는 폼을 생성해주세요. -->
-	<form action = "http://localhost:8181/MyFirstWeb/spring">
+	<!-- post방식으로 /spring주소로 보내는 폼을 생성해주세요. 
+	보내는 데이터는 get방식 form이랑 동일하게 -->
+	<form action="http://localhost:8181/MyFirstWeb/spring" method="post">
 		<input type="text" name="jsp"><br/>
 		<input type="text" name="boot"><br/>
 		<input type="text" name="jpa"><br/>

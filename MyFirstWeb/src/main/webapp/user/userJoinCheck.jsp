@@ -1,4 +1,4 @@
-1<%@page import="kr.co.ict.domain.UserDAO"%>
+<%@page import="kr.co.ict.domain.UserDAO"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
