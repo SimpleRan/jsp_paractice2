@@ -13,8 +13,6 @@ public class BoardVO {
 	private Date bDate;
 	private Date mDate;
 	private int hit;
-	
-	// 우클릭 -> source -> generate getter/setter-> 모든변수선택 생성
 	public int getBoardNum() {
 		return boardNum;
 	}
@@ -57,11 +55,12 @@ public class BoardVO {
 	public void setHit(int hit) {
 		this.hit = hit;
 	}
-	// 우클릭 -> source -> generate toString -> 그 상태로 바로 생성
 	@Override
 	public String toString() {
 		return "BoardVO [boardNum=" + boardNum + ", title=" + title + ", content=" + content + ", writer=" + writer
 				+ ", bDate=" + bDate + ", mDate=" + mDate + ", hit=" + hit + "]";
 	}
 	
+	// 우클릭 -> source -> generate getter/setter-> 모든변수선택 생성
+
 }
