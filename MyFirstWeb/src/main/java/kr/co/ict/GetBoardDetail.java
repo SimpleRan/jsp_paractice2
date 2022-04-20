@@ -17,17 +17,16 @@ import kr.co.ict.domain.BoardVO;
  * Servlet implementation class getBoardDetail
  */
 @WebServlet("/boardDetail")
-public class getBoardDetail extends HttpServlet {
+public class GetBoardDetail extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public getBoardDetail() {
+    public GetBoardDetail() {
         super();
         // TODO Auto-generated constructor stub
     }
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -49,10 +48,10 @@ public class getBoardDetail extends HttpServlet {
 		System.out.println(board);
 		
 		// 바인딩해주세요.
-		request.setAttribute("getBoardDetail", boardNum);
+		request.setAttribute("board", board);
 		
 		// 포워딩해주세요(/board/boardDetail.jsp로)
-		RequestDispatcher dp = request.getRequestDispatcher("/board/getBoardDetail.jsp");
+		RequestDispatcher dp = request.getRequestDispatcher("/board/boardDetail.jsp");
 		dp.forward(request, response);
 	}
 

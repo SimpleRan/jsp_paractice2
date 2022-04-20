@@ -83,12 +83,12 @@ public class BoardDAO {
 	public BoardVO getBoardDetail(int boardNum) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		ResultSet rs = null; //ResultSet은 실해 쿼리문이 SELECT 구문인 경우 결과값을 받을 필요가 없습니다.
 		BoardVO board = new BoardVO();
 		
 		try {
 			con = ds.getConnection();
-			String sql ="SELCET * FROM boardtbl WHERE board_num=?";
+			String sql ="SELECT * FROM boardtbl WHERE board_num=?";
 			
 			pstmt =con.prepareStatement(sql);
 			
@@ -104,7 +104,7 @@ public class BoardDAO {
 				board.setbDate(rs.getDate(5));
 				board.setmDate(rs.getDate(6));
 				board.setHit(rs.getInt(7));
-			}else {
+			} else {
 				System.out.println("계정이 없습니다.");
 			}
 		} catch(Exception e) {
@@ -121,5 +121,4 @@ public class BoardDAO {
 		return board;
 	}
 	
-	
-	}
+}
