@@ -3,6 +3,7 @@ package kr.co.ict;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.DispatcherType;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,18 +33,16 @@ public class GetBoardList extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 여기서 DAO를 활용해 데이터를 얻어온 다음 포워딩으로 getBoardList.jsp로 전송합니다. 
+		// 여기서 DAO를 활용해 데이터를 얻어온 다음 포워딩으로 getBoardList.jsp로 전송합니다.
 		BoardDAO dao = BoardDAO.getInstance();
-		List<BoardVO>boardList = dao.getBoardList();
-		System.out.println("데이터를 받아오는지 확인 : " + boardList);
+		List<BoardVO> boardList = dao.getBoardList();
+		System.out.println("데이터 받아오는지 확인 : " + boardList);
 		
-		// 포워딩 위치로 얻어온 데이터 보내기(servletCustom을 참고하세요.
+		// 포워딩 위치로 얻어온 데이터 보내기.(ServletCustom을 참고하세요.)
 		request.setAttribute("boardList", boardList);
-		// 포워딩으로 getBoardList.jsp와 연결해보겠습니다
+		// 포워딩으로 getBoardList.jsp와 연결해보겠습니다.
 		RequestDispatcher dp = request.getRequestDispatcher("/board/getBoardList.jsp");
 		dp.forward(request, response);
-		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**

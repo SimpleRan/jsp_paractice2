@@ -1,7 +1,6 @@
 package kr.co.ict;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,16 +13,16 @@ import kr.co.ict.domain.BoardDAO;
 import kr.co.ict.domain.BoardVO;
 
 /**
- * Servlet implementation class BoardInsert
+ * Servlet implementation class BoardUpdateForm
  */
-@WebServlet("/boardInsert")
-public class BoardInsert extends HttpServlet {
+@WebServlet("/boardUpdateForm")
+public class BoardUpdateForm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BoardInsert() {
+    public BoardUpdateForm() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,21 +31,19 @@ public class BoardInsert extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// post방식인 경우 제일먼저 한글 인코딩 설정부터
-		request.setCharacterEncoding("utf-8");
-		String title = request.getParameter("title");
-		String writer = request.getParameter("writer");
-		String content = request.getParameter("content");
-		
-		System.out.println(title + ", " + writer + ", " + content);
-		// dao생성
+		//board_num을 request.getParameter로 저장한 후 정수로 바꿔서
+		String strBoardNum = request.getParameter("board_num");
+		int boardNum = Integer.parseInt(strBoardNum);
+		//dao.getBoardDetail() VO로 받아오신 다음 그 정보를 boardUpdateForm.jsp로 포워딩
+	      // DAO를 생성
 		BoardDAO dao = BoardDAO.getInstance();
-		// dao의 insert기능 호출 및 파라미터 매칭
-		dao.boardInsert(title, content, writer);
-		
-		// /boardList로 리다이렉트(서블릿 주소로 리다이렉트시 파일이름 노출 안됨.)
-		response.sendRedirect("http://localhost:8181/MyFirstWeb/boardList");
-
+		//데이터 얻어오기
+		BoardVO board = dao.getBoardDetail(boardNum); 
+		//바인딩
+		request.setAttribute("board", board);
+		//포워딩
+		RequestDispatcher dp = request.getRequestDispatcher("/board/boardUpdateForm.jsp");
+		dp.forward(request, response);
 	}
-}
 
+}
