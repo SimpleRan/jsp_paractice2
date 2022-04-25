@@ -22,11 +22,12 @@
 		<input type="hidden" name="board_num" value="${board.boardNum }">
 		<input type="submit" value="삭제">
 	</form>
-		<form action="http://localhost:8181/MyFirstWeb/boardUpdateForm" method="post">
+	<form action="http://localhost:8181/MyFirstWeb/boardUpdateForm" method="post">
 		<!-- 삭제용 글 번호는 노출시킬 필요가 없으므로 hidden타입으로 숨겨서 보냄 -->
 		<input type="hidden" name="board_num" value="${board.boardNum }">
 		<input type="submit" value="수정">
 	</form>
+	
 </body>
 </html>
 

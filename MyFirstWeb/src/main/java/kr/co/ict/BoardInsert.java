@@ -50,3 +50,8 @@ public class BoardInsert extends HttpServlet {
 	}
 }
 
+
+
+
+
+

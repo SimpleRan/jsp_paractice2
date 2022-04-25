@@ -31,19 +31,28 @@ public class BoardUpdateForm extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//board_num을 request.getParameter로 저장한 후 정수로 바꿔서
 		String strBoardNum = request.getParameter("board_num");
 		int boardNum = Integer.parseInt(strBoardNum);
-		//dao.getBoardDetail() VO로 받아오신 다음 그 정보를 boardUpdateForm.jsp로 포워딩
-	      // DAO를 생성
+		
+		// dao생성
 		BoardDAO dao = BoardDAO.getInstance();
-		//데이터 얻어오기
-		BoardVO board = dao.getBoardDetail(boardNum); 
-		//바인딩
+		// 데이터 얻어오기
+		BoardVO board = dao.getBoardDetail(boardNum);
+		
+		// 바인딩
 		request.setAttribute("board", board);
-		//포워딩
+		// 포워딩
 		RequestDispatcher dp = request.getRequestDispatcher("/board/boardUpdateForm.jsp");
 		dp.forward(request, response);
 	}
-
 }
+
+
+
+
+
+
+
+
+
+

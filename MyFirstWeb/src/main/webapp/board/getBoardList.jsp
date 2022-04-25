@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%--반복해서 출력하려면 JSTL을 활용하는것이 일반적임 --%>
+<!-- 반복해서 출력하려면 JSTL을 활용하는것이 일반적임 -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -21,21 +21,21 @@
 				<td>조회수</td>
 			</tr>
 		</thead>
-			<!-- JSTL c: forEach와 ${boardList}를 활용하면 됩니다.
-			전체 글 정보를 테이블 형식으로 보여주세요.jstl_foreach 나 getAllboardList를 참고하시면 됩니다.  -->	
+			<!-- JSTL c:forEach와 ${boardList}를 활용하면 됩니다.
+			전체 글 정보를 테이블 형식으로 보여주세요. getAllBoardList.jsp 참고해주세요.-->
 			<tbody>
-				<c:forEach var="board" items="${boardList }">
-				<tr>
-					<td>${board.boardNum }</td>
-					<td><a href = "http://localhost:8181/MyFirstWeb/boardDetail?board_num=${board.boardNum }">${board.title}</a></td>
-					<td>${board.writer}</td>
-					<td>${board.bDate}</td>
-					<td>${board.mDate}</td>
-					<td>${board.hit}</td>
-				</tr>	
-				</c:forEach>			
+				<c:forEach var="board" items="${boardList}">
+					<tr>
+						<td>${board.boardNum}</td>
+						<td><a href="http://localhost:8181/MyFirstWeb/boardDetail?board_num=${board.boardNum}">${board.title}</a></td>
+						<td>${board.writer}</td>
+						<td>${board.bDate}</td>
+						<td>${board.mDate}</td>
+						<td>${board.hit}</td>
+					</tr>
+				</c:forEach>
 			</tbody>
-	</table><br/>
-	<a href ="http://localhost:8181/MyFirstWeb/boardInsertForm"><button>글쓰기</button></a>
+	</table>	
+	<a href="http://localhost:8181/MyFirstWeb/boardInsertForm"><button>글쓰기</button></a>
 </body>
 </html>
