@@ -19,7 +19,7 @@ public class UserDAO {
 	//private String connectId = "root";
 	//private String connectPw = "mysql";
 	// 커넥션풀 사용을 위한 객체 생성(java.naming.DataSource)
-	private DataSource ds=null;
+	private DataSource ds  =null;
 	
 	// 생성자를 이용해 생성할 때 자동으로 Class.forName()을 세팅하게 만들어줍니다.
 	// 어떤 쿼리문을 실행하더라도 위의 DB접속 변수와 DB종류지정은 무조건 하기에 생성자로 생성합니다.
