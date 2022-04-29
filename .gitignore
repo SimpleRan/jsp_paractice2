@@ -1,7 +1,12 @@
 /.metadata/
 
 # test2.txt는 github에 업로드 하지 않겠다는 선언
-test2.txt
+test2.txt/
 
 #폴더명/ 는 해당 폴더를 github에 업로드X
 testfolder/
+
+# 이미 업로드된 파일은 .gitignore영향을 안 받음 
+test.txt
+
+# Server folder 
